@@ -50,7 +50,7 @@ export const run = async () => {
     suffix: SQL_SUFFIX,
   });
 
-  const prompt = "Employees who were hired after 2004?";
+  const prompt = "Employees who were hired after 2005?";
 
   let response = {
     prompt: prompt,
