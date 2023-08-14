@@ -4,10 +4,14 @@ import { createSqlAgent, SqlToolkit } from "langchain/agents/toolkits/sql";
 import { DataSource } from "typeorm";
 import { configDotenv } from "dotenv";
 
-/** This example uses Chinook database, which is a sample database available for SQL Server, Oracle, MySQL, etc.
- * To set it up follow the instructions on https://database.guide/2-sample-databases-sqlite/, placing the .db file
- * in the examples folder.
- */
+// In this example language model is used to generate SQL queries
+// for a database. The database is a sqlite database with the
+// Northwind database schema. The agent is trained on a dataset
+// of SQL queries and their corresponding natural language
+// descriptions. The agent is then used to generate SQL queries
+// from natural language descriptions.
+
+
 export const run = async () => {
 
   configDotenv();
