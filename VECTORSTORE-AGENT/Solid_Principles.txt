@@ -1,0 +1,18 @@
+The SOLID principles are a set of five design principles that aim to guide developers in writing maintainable, flexible, and scalable software by promoting well-structured and modular code. These principles were introduced by Robert C. Martin and have become fundamental concepts in software design and architecture. Each principle addresses a specific aspect of software development, and together they form a cohesive foundation for building high-quality software systems. Here's a brief summary of each SOLID principle:
+
+Single Responsibility Principle (SRP):
+This principle states that a class or module should have only one reason to change. In other words, a class should have a single responsibility or role. By adhering to SRP, classes become focused on a specific task, making them easier to understand, test, and maintain. Splitting responsibilities into separate classes helps prevent unwanted side effects when changes are made.
+
+Open/Closed Principle (OCP):
+The Open/Closed Principle emphasizes that software entities, such as classes, modules, or functions, should be open for extension but closed for modification. This means you should be able to add new functionality without modifying existing code. This is achieved through abstraction, inheritance, and interfaces, enabling you to extend software behavior without altering its core logic.
+
+Liskov Substitution Principle (LSP):
+The Liskov Substitution Principle asserts that objects of a derived class should be substitutable for objects of the base class without affecting the correctness of the program. In other words, a derived class should adhere to the behavior defined by its base class. Adhering to LSP ensures that polymorphism works correctly and that derived classes don't violate the expectations of clients using the base class.
+
+Interface Segregation Principle (ISP):
+ISP suggests that clients should not be forced to depend on interfaces they do not use. In other words, classes should not be required to implement methods they don't need. Instead of having large, all-encompassing interfaces, break them down into smaller, more specific interfaces. This avoids the "fat" interface problem and prevents client classes from being coupled to unnecessary methods.
+
+Dependency Inversion Principle (DIP):
+DIP advocates that high-level modules should not depend on low-level modules, but both should depend on abstractions. Additionally, abstractions should not depend on details; details should depend on abstractions. This principle encourages the use of dependency injection, interfaces, and inversion of control containers to decouple components and promote flexibility and testability.
+
+By following the SOLID principles, developers can create codebases that are easier to maintain, modify, and extend. These principles provide a foundation for building software that is adaptable to change, reduces coupling between components, and promotes good coding practices throughout the software development lifecycle.

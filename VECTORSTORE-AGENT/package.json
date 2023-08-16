@@ -1,0 +1,23 @@
+{
+  "name": "vectorstore-agent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc -p .",
+    "start": "npm run build && node dist/index.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "langchain": "^0.0.129"
+  },
+  "devDependencies": {
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  }
+}
