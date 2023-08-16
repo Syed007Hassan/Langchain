@@ -7,7 +7,7 @@ Here are some of the advantages of using the SQL Agent:
 
 - It can answer questions based on the databases' schema as well as on the databases' content (like describing a specific table)
 - It can recover from errors by running a generated query, catching the traceback and regenerating it correctly.
-- It is compatible with any SQL dialect supported by SQLAlchemy (e.g., MySQL, PostgreSQL, Oracle SQL, Databricks, SQLite).
+- It is compatible with any SQL dialect supported by SQLAlchemy and TypeORM (e.g., MySQL, PostgreSQL, Oracle SQL, Databricks, SQLite).
 
 An Example usecase is implemented in [SQL-AGENT](https://github.com/Syed007Hassan/Langchain/blob/main/SQL-AGENTS/index2.js)
 
