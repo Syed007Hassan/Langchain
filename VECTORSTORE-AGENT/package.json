@@ -5,8 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "dev": "ts-node src/index.ts",
-    "build": "tsc -p .",
-    "start": "npm run build && node dist/index.js"
+    "start:prod": "node dist/index.js",
+    "build": "tsc -p ."
   },
   "type": "module",
   "keywords": [],

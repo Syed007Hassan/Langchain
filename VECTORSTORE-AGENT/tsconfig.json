@@ -1,0 +1,42 @@
+// {
+//   "compilerOptions": {
+//     "module": "NodeNext",
+//     "moduleResolution": "nodenext",
+//     "baseUrl": "src",
+//     "outDir": "dist",
+//     "sourceMap": true,
+//     "noImplicitAny": true
+//     // "allowImportingTsExtensions": true,
+//     // "noEmit": false,
+//     // "emitDeclarationOnly": false
+//   },
+//   "include": ["src/**/*"]
+// }
+
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "target": "es2020" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    "lib": ["dom", "es6", "es2020", "esnext"],
+    "allowJs": true /* Allow JavaScript files to be compiled. */,
+    "sourceMap": true,
+    "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
+    "allowSyntheticDefaultImports": true /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */,
+    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+    "noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statements. */,
+    "moduleResolution": "nodenext" /* Specify how to resolve module names. */,
+    "resolveJsonModule": true /* Resolve JSON files in node_modules. */,
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+    "removeComments": true /* Do not emit comments to output. */,
+    "noImplicitThis": true /* Report error when 'this' is not bound in property accesses. */,
+    "noImplicitAny": true /* Report error when 'any' is used in a type context. */,
+    "experimentalDecorators": true /* Enable experimental support for ES7 decorators. */,
+    "emitDecoratorMetadata": true /* Emit metadata for class decorators. */,
+    "strictFunctionTypes": true /* Enable strict checking of function types. */,
+    "strictNullChecks": true /* Enable strict checking of nullish coalescing expressions. */,
+    "outDir": "./dist" /* Redirect output structure to the directory. */,
+    "rootDir": "./src" /* Specify the root directory of input files. */
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

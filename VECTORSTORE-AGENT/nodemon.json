@@ -1,0 +1,15 @@
+{
+  "ignore": [
+    ".git",
+    "node_modules",
+    "bower_components",
+    "dist",
+    "build",
+    "coverage"
+  ],
+  "watch": [
+    "src",
+    "test"
+  ],
+  "ext": "ts,json,js"
+}
