@@ -1,54 +1,68 @@
+import express from "express";
 import { OpenAI } from "langchain/llms/openai";
 import { SqlDatabase } from "langchain/sql_db";
 import { createSqlAgent, SqlToolkit } from "langchain/agents/toolkits/sql";
 import { DataSource } from "typeorm";
 import { configDotenv } from "dotenv";
 
-// In this example language model is used to generate SQL queries
-// for a database. The database is a sqlite database with the
-// Northwind database schema. The agent is trained on a dataset
-// of SQL queries and their corresponding natural language
-// descriptions. The agent is then used to generate SQL queries
-// from natural language descriptions.
+const app = express();
 
+app.get("/query", async (req, res) => {
+  const prompt = req.query.prompt;
 
-export const run = async () => {
+console.log("prompt: " + prompt);
 
   configDotenv();
 
-  const datasource = new DataSource({
-    type: "sqlite",
-    database: "./data/northwind.db",
-  });
-  const db = await SqlDatabase.fromDataSourceParams({
-    appDataSource: datasource,
-  });
+  // const datasource = new DataSource({
+  //   type: "sqlite",
+  //   database: "./data/northwind.db",
+  // });
 
-  const toolkit = new SqlToolkit(db);
-  const model = new OpenAI({
-    temperature: 0,
-  });
-  const executor = createSqlAgent(model, toolkit);
+  // const db = await SqlDatabase.fromDataSourceParams({
+  //   appDataSource: datasource,
+  // });
 
-  const input = `Get all the employees who were hired after 2005?`;
+  // const toolkit = new SqlToolkit(db);
+  // const model = new OpenAI({
+  //   temperature: 0,
+  // });
 
-  console.log(`Executing with input "${input}"...`);
+  // const executor = createSqlAgent(model, toolkit);
 
-  const result = await executor.call({ input });
+  // let response = {
+  //   prompt: prompt,
+  //   output: "",
+  //   intermediateSteps: [],
+  //   error: "",
+  // };
 
-  console.log(`Got output ${result.output}`);
+  // try {
+  //   const result = await executor.call({ input: prompt });
 
-  console.log(
-    `Got intermediate steps ${JSON.stringify(
-      result.intermediateSteps,
-      null,
-      2
-    )}`
-  );
+  //   result.intermediateSteps.forEach((step) => {
+  //     if (step.action.tool === "query-sql") {
+  //       response.prompt = prompt;
+  //       response.output = step.observation;
+  //       response.intermediateSteps = result.intermediateSteps;
+  //     }
+  //   });
 
-  await datasource.destroy();
-};
+  //   console.log(
+  //     `Intermediate steps ${JSON.stringify(result.intermediateSteps, null, 2)}`
+  //   );
 
+  //   res.json(response);
+  // } catch (e) {
+  //   console.log(e + " " + "my error message");
+  //   response.error = "Server error. Try again with a different prompt.";
 
+  //   res.status(500).json(response);
+  // }
 
-run();
+  // await datasource.destroy();
+});
+
+app.listen(3000, () => {
+  console.log("Server started on port 3000");
+});
