@@ -5,6 +5,9 @@ from langchain.document_loaders import ReadTheDocsLoader
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores.faiss import FAISS
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def ingest_docs():

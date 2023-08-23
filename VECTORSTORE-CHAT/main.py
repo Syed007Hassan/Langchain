@@ -3,6 +3,7 @@ import logging
 import pickle
 from pathlib import Path
 from typing import Optional
+from dotenv import load_dotenv
 
 from fastapi import FastAPI, Request, WebSocket, WebSocketDisconnect
 from fastapi.templating import Jinja2Templates
@@ -12,16 +13,19 @@ from callback import QuestionGenCallbackHandler, StreamingLLMCallbackHandler
 from query_data import get_chain
 from schemas import ChatResponse
 
+
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 vectorstore: Optional[VectorStore] = None
+load_dotenv()
 
 
 @app.on_event("startup")
 async def startup_event():
     logging.info("loading vectorstore")
     if not Path("vectorstore.pkl").exists():
-        raise ValueError("vectorstore.pkl does not exist, please run ingest.py first")
+        raise ValueError(
+            "vectorstore.pkl does not exist, please run ingest.py first")
     with open("vectorstore.pkl", "rb") as f:
         global vectorstore
         vectorstore = pickle.load(f)
